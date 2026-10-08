@@ -13,18 +13,18 @@ const PROFILES_KEY = "pharmacy-profiles-v1";
 /** Demo accounts for the localStorage-only login (no backend). */
 export const DEMO_USERS = [
   {
-    username: "pharmacist",
-    password: "medistock123",
-    displayName: "J. Uwase",
+    username: "Lydiie",
+    password: "Lydiie@007",
+    displayName: "I. Lydivine",
     role: "Pharmacist on duty",
-    initials: "JU",
+    initials: "IL",
   },
   {
     username: "admin",
     password: "admin123",
-    displayName: "C. Mugisha",
+    displayName: "M. Hussein",
     role: "Pharmacy admin",
-    initials: "CM",
+    initials: "MH",
   },
 ];
 
@@ -100,7 +100,7 @@ export function AuthProvider({ children }) {
 
   const login = useCallback((username, password) => {
     const match = DEMO_USERS.find(
-      (u) => u.username === username.trim().toLowerCase() && u.password === password,
+      (u) => u.username === username.trim() && u.password === password,
     );
     if (!match) return { ok: false, error: "Invalid username or password" };
 

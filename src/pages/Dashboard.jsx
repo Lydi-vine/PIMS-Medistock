@@ -115,7 +115,7 @@ export default function Dashboard() {
       )}
       {stats.low.length > 0 && (
         <WarningAlert severity="warning">
-          {stats.low.length} medicine(s) reached the reorder level. <Link to="/low-stock">View low stock</Link>
+          {stats.low.length} medicine(s) needs to be restocked. <Link to="/low-stock">View low stock</Link>
         </WarningAlert>
       )}
 

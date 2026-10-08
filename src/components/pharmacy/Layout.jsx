@@ -79,25 +79,15 @@ function NavList({ onNavigate }) {
         {navItems.map((item) => {
           const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
           return (
-            <ListItemButton
-              key={item.to}
-              component={Link}
-              to={item.to}
-              onClick={onNavigate}
-              selected={active}
-              sx={{
-                borderRadius: 2,
-                mb: 0.5,
+            <ListItemButton key={item.to} component={Link} to={item.to} onClick={onNavigate} selected={active} sx={{
+                borderRadius: 2, mb: 0.5,
                 "&.Mui-selected": { bgcolor: "primary.light", color: "primary.dark" },
                 "&.Mui-selected .MuiListItemIcon-root": { color: "primary.dark" },
               }}
             >
               <ListItemIcon sx={{ minWidth: 40 }}>{item.icon}</ListItemIcon>
-              <ListItemText
-                primary={item.label}
-                primaryTypographyProps={{ fontSize: 14, fontWeight: active ? 700 : 500 }}
-              />
-              {item.label === "Low Stock" && alerts > 0 && <Badge color="error" badgeContent={alerts} />}
+              <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: 14, fontWeight: active ? 700 : 500 }}/>
+              {item.label === "Dashboard" && alerts > 0 && <Badge color="error" badgeContent={alerts} />}
             </ListItemButton>
           );
         })}

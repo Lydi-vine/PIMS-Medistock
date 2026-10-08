@@ -17,7 +17,7 @@ export default function App() {
     <PharmacyLayout>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/medicines" element={<Medicines />} />
         <Route path="/medicines/:medicineId" element={<MedicineDetails />} />
         <Route path="/categories" element={<Categories />} />
